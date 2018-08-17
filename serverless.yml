@@ -1,0 +1,38 @@
+
+service: strava
+
+frameworkVersion: ">=1.28.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: go1.x
+  region: eu-west-1
+
+
+package:
+ exclude:
+   - ./**
+ include:
+   - ./bin/**
+
+functions:
+  hubChallenge:
+    handler: bin/hubChallenge
+    events:
+      - http:
+          path: event
+          method: get
+    environment:
+      hubverifytoken: XYZ
+
+          
+
+  postEvent:
+    handler: bin/postEvent
+    events:
+      - http:
+          path: event
+          method: post
+    environment:
+      stravaToken: XYZ
+      pushBulletToken: XYZ
