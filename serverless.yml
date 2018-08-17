@@ -1,0 +1,38 @@
+
+service: strava
+
+frameworkVersion: ">=1.28.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: go1.x
+  region: eu-west-1
+
+
+package:
+ exclude:
+   - ./**
+ include:
+   - ./bin/**
+
+functions:
+  hubChallenge:
+    handler: bin/hubChallenge
+    events:
+      - http:
+          path: event
+          method: get
+    environment:
+      hubverifytoken: hejhopp
+
+          
+
+  postEvent:
+    handler: bin/postEvent
+    events:
+      - http:
+          path: event
+          method: post
+    environment:
+      stravaToken: 7d2dbb200b3fae3e61244bce41b8ffedeab26676
+      pushBulletToken: v1l0LNLVVHb3hwVYXjNZE0gFde48QMydhhujvd5vpkLSe
