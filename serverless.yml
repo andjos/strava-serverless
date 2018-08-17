@@ -24,9 +24,6 @@ functions:
           method: get
     environment:
       hubverifytoken: XYZ
-
-          
-
   postEvent:
     handler: bin/postEvent
     events:
