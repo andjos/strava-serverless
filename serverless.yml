@@ -23,7 +23,7 @@ functions:
           path: event
           method: get
     environment:
-      hubverifytoken: hejhopp
+      hubverifytoken: XYZ
 
           
 
@@ -34,5 +34,5 @@ functions:
           path: event
           method: post
     environment:
-      stravaToken: 7d2dbb200b3fae3e61244bce41b8ffedeab26676
-      pushBulletToken: v1l0LNLVVHb3hwVYXjNZE0gFde48QMydhhujvd5vpkLSe
+      stravaToken: XYZ
+      pushBulletToken: XYZ
